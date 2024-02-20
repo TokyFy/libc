@@ -6,13 +6,14 @@
 /*   By: franaivo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 16:31:22 by franaivo          #+#    #+#             */
-/*   Updated: 2024/02/19 16:32:36 by franaivo         ###   ########.fr       */
+/*   Updated: 2024/02/20 13:23:16 by franaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-unsigned int	ft_strlen(const char *s)
+t_size_t	ft_strlen(const char *s)
 {
-	if (!s || s[0] == '\0')
+	if (s[0] == '\0')
 		return (0);
 	return (1 + ft_strlen(++s));
 }
