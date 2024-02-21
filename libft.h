@@ -26,4 +26,8 @@ void					*ft_memset(void *byte, int c, t_size_t n);
 void					ft_bzero(void *s, unsigned int n);
 void					*ft_memcpy(void *dest, const void *src, t_size_t n);
 void					*ft_memmove(void *dest, const void *src, t_size_t n);
+
+unsigned int			ft_strlcat(char *dest, char *src, unsigned int size);
+unsigned int			ft_strlcpy(char *dest, char *src, unsigned int size);
+
 #endif // !LIBFT_H
