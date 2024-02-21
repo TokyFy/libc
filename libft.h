@@ -30,4 +30,7 @@ void					*ft_memmove(void *dest, const void *src, t_size_t n);
 unsigned int			ft_strlcat(char *dest, char *src, unsigned int size);
 unsigned int			ft_strlcpy(char *dest, char *src, unsigned int size);
 
+int						ft_toupper(int c);
+int						ft_tolower(int c);
+
 #endif // !LIBFT_H
