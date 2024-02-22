@@ -1,16 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: franaivo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/19 14:57:38 by franaivo          #+#    #+#             */
+/*   Created: 2024/02/22 10:29:01 by franaivo          #+#    #+#             */
 /*   Updated: 2024/02/22 10:29:01 by franaivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+#include "libft.h"
+
+char	*ft_strdup(char *src)
 {
-	return (c >= '0' && c <= '9');
+	char	*new_src;
+	int		i;
+
+	new_src = ft_calloc(ft_strlen(src) + 1, sizeof(char));
+	if (!new_src)
+		return (0);
+	i = 0;
+	while (src[i])
+	{
+		new_src[i] = src[i];
+		i++;
+	}
+	new_src[i] = '\0';
+	return (new_src);
 }
