@@ -19,11 +19,14 @@ SOURCES = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_st
 					ft_itoa.c ft_strmapi.c ft_striteri.c \
 					ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
+BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c
+
 CC = gcc
 FLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 
 OBJECTS = $(SOURCES:.c=.o)
+OBJ_BONUS = $(BONUS:.c=.o)
 
 all: $(NAME)
 
@@ -32,6 +35,12 @@ $(NAME) : $(OBJECTS)
 
 $(OBJECTS) : %.o : %.c
 	@$(CC) -c $(FLAGS) $< -o $@
+
+$(OBJ_BONUS) : %.o : %.c
+	@$(CC) -c $(FLAGS) $< -o $@
+
+bonus : $(OBJECTS) $(OBJ_BONUS)
+	@ar rcs $(NAME) $(OBJECTS) $(OBJ_BONUS)
 
 clean:
 	@rm -f $(OBJECTS)
